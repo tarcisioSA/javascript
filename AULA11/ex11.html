@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        div{
+            font: 18pt normal Arial;
+            margin: 0 auto;
+            background-color: rgb(245, 96, 96);
+            width: 350px;
+            height: 350px;
+        }
+
+        input{
+            margin-top: 50px;
+            margin-left: 25px;
+        }
+        h2{
+            text-align: center;
+            color: aliceblue;
+        }
+      
+    </style>
+</head>
+<body>
+    
+    <div id="res">
+        <h2>Qual o seu Pais?</h2> <input type="text" name="pais" id="pais">
+    <input type="button" value="verificar" onclick="verificar()">
+    </div>
+    <script>
+        
+        
+         function verificar(){
+
+            var pais = window.document.getElementById('pais')
+            var pais = (pais.value)
+            
+
+            res.innerHTML = (`<p>Seu pais é: <strong>${pais.toUpperCase()}</strong></P>`)
+            if(pais.toUpperCase() == 'BRASIL'){
+                res.innerHTML += ('<p>Você é <strong>brasileiro</strong></p>')
+            }else{
+                res.innerHTML += ('<p>Você é <strong>estrangeiro</strong></p>')
+            }
+
+
+         }
+    </script>
+</body>
+</html>

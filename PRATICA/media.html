@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meida</title>
+    <style>
+        body{
+            background-color: rgb(253, 253, 198);
+        }
+        section{
+            box-shadow: 6px 6px 10px black;
+            padding: 10px;
+            text-align: center;
+            margin: auto;
+            background-color: rgb(102, 151, 255);
+            width: 450px;
+            height: 450px;
+
+        }
+        div#res{
+            padding: 25px;
+            font: 25px normal Arial;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+
+<header>
+    
+</header>
+<section>
+    <div>
+        <h2>Média do aluno</h2>
+        <p>N1<input type="number" name="n1" id="n1"></p>
+        <p>N2<input type="number" name="n2" id="n2"></p>
+        <input type="button" value="calcular média" class="btn btn-secondary" onclick="calcular()">
+        <a class="nav-link active" href="floor.html">floor</a>
+    </div>
+    <div id="res">
+        Resultado
+    </div>
+</section>
+<script>
+   
+    
+
+    function calcular(){
+    var n1 = window.document.getElementById('n1')
+    var n2 = window.document.getElementById('n2')
+    var res = window.document.getElementById('res')
+    var total = Number(n1.value) + Number(n2.value)
+    res.innerHTML = `<p>N1: ${n1.value}</p><p>N2: ${n2.value}</p>`
+    res.innerHTML += `<p>A média é ${total/2}</p>`
+    if(total/2 <= 5){
+        res.innerHTML += `<p>REPROVADO</p>`
+    }else{
+        res.innerHTML += `<p>APROVADO</P>`
+    }
+        
+
+
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>

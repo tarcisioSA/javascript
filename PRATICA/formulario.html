@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="formulario.css">
+<body>
+    <h1>Cadastro</h1>
+    <section>
+    Nome: <input type="text" name="nome" id="nome"><br>
+    Sobrenome: <input type="text" name="sobrenome" id="sobrenome"><br>
+    CPF: <input type="text" name="cpf" id="cpf"><br>
+    Celular <input type="text" name="celular" id="celular" placeholder="11-2-3333-4444"><br>
+    <input type="button" value="verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+
+    </section>
+    
+    <script>
+        function verificar(){
+            var nome = document.getElementById('nome')
+            var sobrenome = document.getElementById('sobrenome')
+            var cpf = document.getElementById('cpf')
+            var celular = document.getElementById('celular')
+            var res = document.getElementById('res')
+
+            if (nome == ' '){
+                window.alert('erro')
+            }
+
+            res.innerHTML = (`Nome: ${nome.value}<br>Sobrenome: ${sobrenome.value}<br>CPF: ${cpf.value}<br>Celular: ${celular.value}`)
+
+
+
+        }
+    </script>
+    
+</body>
+</html>
