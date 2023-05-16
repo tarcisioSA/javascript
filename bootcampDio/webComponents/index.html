@@ -7,20 +7,21 @@
     <title>PORTAL DE NOTICIAS</title>
     <link rel="stylesheet" href="styles/card.css">
     <script src="src/Components/CardNews.js" defer></script>
+    <script src="src/Components/tituloDinamico.js" defer></script>
 </head>
 <body>
-    <div class="conteiner">
-        <div class="card">
-            <div class="card-left">
-                <span>By Tarcisio Sousa</span>
-                <a href="">Darth Vader Contrata Devs</a>
-                <p>Darth Vader contrata desenvolvedores para web componentes</p>
-            </div>
-            <div class="card-right">
-                <img src="https://stickermakerr.com/stickersassets/azer73/13.webp" alt="" srcset="">
-            </div>
-        </div>
-    </div>
-    <card-news></card-news>
+    <card-news
+        autor="Tarcisio"
+        title="Darth Vader Contrata"
+        content="Darth Vader contrata desenvolvedores para web componentes"
+        photo="https://stickermakerr.com/stickersassets/azer73/13.webp"
+    ></card-news>
+    <card-news
+        autor="Vittor"
+        title="Bolsonaro foi preso"
+        content="Hoje dia 11/05/2023 Bolsonaro foi preso em sua residencia"
+        
+    ></card-news>
+    
 </body>
 </html>

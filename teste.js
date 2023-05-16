@@ -1,31 +1,35 @@
-const numPedidos = parseInt(2);
-let totalCalorias = 0;
-let valorTotal = 0;
-
-for (let i = 1; i <= numPedidos; i++) {
-  let prato = '';
-  let calorias = parseInt();
-  let ehVegano = 's'.toLowerCase() === 's';
+function calcularValorTotal(n, pedidos, cupom) {
+  let total = 0;
+  for (let i = 0; i < n; i++) {
+    let [nome, valor] = pedidos[i].split(" ");
+    valor = parseFloat(valor);
+    total += valor;
+  }
   
-  if (ehVegano) {
-    if(i === 1){
-      prato = 'Hamburguer de lentilha';
-      calorias = 300;
-      let vegano = 'Vegano';
-      
+  //TODO: Criar as condições para aplicar o cupom de desconto (10% ou 20%).
+     if (cupom == 10) {
+    total *= 0.9;
+  } else if (cupom == 20) {
+    total *= 0.8;
   }
-  if(i === 2){
-      prato = 'Salada de frutas';
-      calorias = 60;
-      let vegano = 'Vegano';
-      
-  }
-  } 
-
-
-  const tipoPrato = ehVegano ? 'Vegano' : 'Não-vegano';
-  console.log(`Pedido ${i}: ${prato} (${tipoPrato}) - ${calorias} calorias`);
+  
+  return total.toFixed(2);
 }
 
+//Recupera os valores de entrada, criando um array para os pedidos:
+const n = parseInt(gets(4));
+const pedidos = [
+  "Pizza 19.99",
+  "Salada 29.99",
+  "Sushi 61.00",
+  "Pudim 10.00"];
 
+  for (let i = 0; i < n; i++) {
+    pedidos.push(gets());
+  }
+
+const cupom = parseInt(gets(20));
+
+const valorAPagar = calcularValorTotal(n, pedidos , cupom);
+print(`Valor total: ${valorAPagar}`);
 
