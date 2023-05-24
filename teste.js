@@ -1,35 +1,37 @@
-function calcularValorTotal(n, pedidos, cupom) {
-  let total = 0;
-  for (let i = 0; i < n; i++) {
-    let [nome, valor] = pedidos[i].split(" ");
-    valor = parseFloat(valor);
-    total += valor;
-  }
+const pedido = {
+  cliente: 'Joao',
+  endereco: 'Rua B, 456',
+  itens: [],
+  taxaEntrega: 5.0
+};
+
+// Para popular o array de itens, criamos a seguinte estrutura de repetição:
+const quantidadeItens = parseInt(2);
+while (pedido.itens.length < quantidadeItens) {
+    const nomeItem = ['Hamburger', 'Batata frita']
+    const precoItem = parseFloat([15, 8])
+    pedido.itens.push({nome: nomeItem, preco: precoItem})
   
-  //TODO: Criar as condições para aplicar o cupom de desconto (10% ou 20%).
-     if (cupom == 10) {
-    total *= 0.9;
-  } else if (cupom == 20) {
-    total *= 0.8;
-  }
-  
-  return total.toFixed(2);
 }
 
-//Recupera os valores de entrada, criando um array para os pedidos:
-const n = parseInt(gets(4));
-const pedidos = [
-  "Pizza 19.99",
-  "Salada 29.99",
-  "Sushi 61.00",
-  "Pudim 10.00"];
+//TODO: Percorra o array de itens do pedido e calcule o seu valor total.
+let news = []
 
-  for (let i = 0; i < n; i++) {
-    pedidos.push(gets());
-  }
+news.push = pedido.itens.preco
 
-const cupom = parseInt(gets(20));
+console.log(news)
 
-const valorAPagar = calcularValorTotal(n, pedidos , cupom);
-print(`Valor total: ${valorAPagar}`);
+let somaPedidos = 0;
+for ( let i = 0; i < pedido.itens.length; i++ ){
+  somaPedidos += pedido.itens[i].preco;
+  
+}
+
+console.log(pedido.itens)
+let valorTotal = somaPedidos + pedido.taxaEntrega
+//TODO: Imprima a saída no padrão descrito neste desafio.
+console.log(`Pedido: ${pedido.cliente}`);
+console.log(`endereco de entrega: ${pedido.endereco}`);
+console.log(`Total: R$ ${valorTotal.toFixed(2)}`);
+
 
